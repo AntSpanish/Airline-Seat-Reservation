@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Airplane {
 String[][] firstClass = new String[5][4];
@@ -71,14 +71,97 @@ String[][] economy = new String[16][6];
 			}
 		}
 		else if(clas.equals("economy")) {
-			if(spot.equals("w")) {
+			if(pass == 1) {
+				if(spot.equals("w")) {
+					boolean placedSeat = false;
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(x == 0 || x == 5) {
+									if(economy[i][x].equals("O")) {
+										economy[i][x] = "x";
+										placedSeat = true;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				else if(spot.equals("a")) {
+					boolean placedSeat = false;
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(x == 2 || x == 3) {
+									if(economy[i][x].equals("O")) {
+										economy[i][x] = "x";
+										placedSeat = true;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				else if(spot.equals("c")) {
+					boolean placedSeat = false;
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(x == 1 || x == 4) {
+									if(economy[i][x].equals("O")) {
+										economy[i][x] = "x";
+										placedSeat = true;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else if(pass == 2) {
 				boolean placedSeat = false;
-				for(int i = 0; i < economy.length; i++) {
-					while(!placedSeat) {
-						for(int x = 0; x < economy[i].length; x++) {
-							if(x == 0 || x == 5) {
-								if(economy[i][x].equals("O")) {
+				if(spot.equals("a")) {
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(x == 1 || x == 3) {
+									if(economy[i][x].equals("O") && economy[i][x+1].equals("O")) {
+										economy[i][x] = "x";
+										economy[i][x+1] = "x";
+										placedSeat = true;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				if(spot.equals("w")) {
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(x == 0 || x == 4) {
+									if(economy[i][x].equals("O") && economy[i][x+1].equals("O")) {
+										economy[i][x] = "x";
+										economy[i][x+1] = "x";
+										placedSeat = true;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				if(spot.equals("c")) {
+					for(int i = 0; i < economy.length; i++) {
+						while(!placedSeat) {
+							for(int x = 0; x < economy[i].length; x++) {
+								if(economy[i][x].equals("O") && economy[i][x+1].equals("O")) {
 									economy[i][x] = "x";
+									economy[i][x+1] = "x";
 									placedSeat = true;
 									break;
 								}
@@ -87,33 +170,17 @@ String[][] economy = new String[16][6];
 					}
 				}
 			}
-			else if(spot.equals("a")) {
+			else if(pass == 3) {
 				boolean placedSeat = false;
 				for(int i = 0; i < economy.length; i++) {
 					while(!placedSeat) {
 						for(int x = 0; x < economy[i].length; x++) {
-							if(x == 2 || x == 3) {
-								if(economy[i][x].equals("O")) {
-									economy[i][x] = "x";
-									placedSeat = true;
-									break;
-								}
-							}
-						}
-					}
-				}
-			}
-			else if(spot.equals("c")) {
-				boolean placedSeat = false;
-				for(int i = 0; i < economy.length; i++) {
-					while(!placedSeat) {
-						for(int x = 0; x < economy[i].length; x++) {
-							if(x == 1 || x == 4) {
-								if(economy[i][x].equals("O")) {
-									economy[i][x] = "x";
-									placedSeat = true;
-									break;
-								}
+							if(economy[i][x].equals("O") && economy[i][x+1].equals("O") && economy[i][x+2].equals("O")) {
+								economy[i][x] = "x";
+								economy[i][x+1] = "x";
+								economy[i][x+2] = "x";
+								placedSeat = true;
+								break;
 							}
 						}
 					}
