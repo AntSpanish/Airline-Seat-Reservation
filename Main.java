@@ -57,13 +57,28 @@ public class Main {
 								validPass = true;
 							}
 								
-							else if(pass == 1 || pass == 2) {
+							else if(pass == 1) {
+								validPass = true;
+								boolean validSpot = false;
+								while(!validSpot) {
+									System.out.println("A)isle, C)enter or W)indow: ");
+									spot = in.next();
+									if(spot.equalsIgnoreCase("a")||spot.equalsIgnoreCase("w") || spot.equalsIgnoreCase("c")) {
+										validSpot = true;
+									}
+									else {
+										System.out.println("Invalid Choice. Enter Again: ");
+									}
+									
+								}
+							}
+							else if(pass == 2) {
 								validPass = true;
 								boolean validSpot = false;
 								while(!validSpot) {
 									System.out.println("A)isle or W)indow: ");
 									spot = in.next();
-									if(spot.equalsIgnoreCase("a")||spot.equalsIgnoreCase("w")) {
+									if(spot.equalsIgnoreCase("a")||spot.equalsIgnoreCase("w") || spot.equalsIgnoreCase("c")) {
 										validSpot = true;
 									}
 									else {
@@ -91,6 +106,7 @@ public class Main {
 				run = false;
 			}
 		}
+		in.close();
 
 	}
 
