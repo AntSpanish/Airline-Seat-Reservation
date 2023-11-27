@@ -7,8 +7,8 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		boolean run = true;
 		while(run) {
-			System.out.println("A)dd S)how Q)uit");
-			String choice = in.nextLine();
+			System.out.println("A)dd S)how Q)uit: ");
+			String choice = in.next();
 			if(choice.equalsIgnoreCase("a")){
 				String clas = "";
 				int pass = 0;
@@ -78,7 +78,7 @@ public class Main {
 								while(!validSpot) {
 									System.out.println("A)isle or W)indow: ");
 									spot = in.next();
-									if(spot.equalsIgnoreCase("a")||spot.equalsIgnoreCase("w") || spot.equalsIgnoreCase("c")) {
+									if(spot.equalsIgnoreCase("a")||spot.equalsIgnoreCase("w")) {
 										validSpot = true;
 									}
 									else {
@@ -100,10 +100,25 @@ public class Main {
 				a.addSeat(clas,pass,spot);
 			}
 			else if(choice.equalsIgnoreCase("s")){
-				System.out.println(a.showSeating());
+				for(int i = 0; i < a.getFirst().length; i++) {
+					for(int x = 0; x < a.getFirst()[i].length; x++) {
+						System.out.print(a.getFirst()[i][x]);
+					}
+					System.out.println();
+				}
+				for(int i = 0; i < a.getEconomy().length; i++) {
+					for(int x = 0; x < a.getEconomy()[i].length; x++) {
+						System.out.print(a.getEconomy()[i][x]);
+					}
+					System.out.println();
+				}
+				
 			}
 			else if(choice.equalsIgnoreCase("q")) {
 				run = false;
+			}
+			else {
+				System.out.println("Invalid Choice");
 			}
 		}
 		in.close();
