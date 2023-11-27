@@ -32,8 +32,13 @@ String[][] economy = new String[16][6];
 										placedSeat = true;
 										break;
 									}
+									
 								}
 							}
+						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
 						}
 					}
 				}
@@ -49,8 +54,13 @@ String[][] economy = new String[16][6];
 										placedSeat = true;
 										break;
 									}
+								
 								}
 							}
+						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
 						}
 					}
 				}
@@ -67,12 +77,19 @@ String[][] economy = new String[16][6];
 									placedSeat = true;
 									break;
 								}
+								
 							}
 						}
 					}
+					if(!placedSeat) {
+						System.out.println("No More Seats Available");
+						placedSeat = true;
+					}
 				}
 				while(!placedSeat);
+				
 			}
+			
 		}
 		else if(clas.equals("economy")) {
 			if(pass == 1) {
@@ -90,6 +107,10 @@ String[][] economy = new String[16][6];
 								}
 							}
 						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
+						}
 					}
 				}
 				else if(spot.equals("a")) {
@@ -106,6 +127,10 @@ String[][] economy = new String[16][6];
 								}
 							}
 						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
+						}
 					}
 				}
 				else if(spot.equals("c")) {
@@ -121,6 +146,10 @@ String[][] economy = new String[16][6];
 									}
 								}
 							}
+						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
 						}
 					}
 				}
@@ -141,6 +170,10 @@ String[][] economy = new String[16][6];
 								}
 							}
 						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
+						}
 					}
 				}
 				if(spot.equals("w")) {
@@ -157,6 +190,10 @@ String[][] economy = new String[16][6];
 								}
 							}
 						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
+						}
 					}
 				}
 				if(spot.equals("c")) {
@@ -170,6 +207,10 @@ String[][] economy = new String[16][6];
 									break;
 								}
 							}
+						}
+						if(!placedSeat) {
+							System.out.println("No More Seats Available");
+							placedSeat = true;
 						}
 					}
 				}
@@ -189,6 +230,10 @@ String[][] economy = new String[16][6];
 								}
 							}
 						}
+					}
+					if(!placedSeat) {
+						System.out.println("No More Seats Available");
+						placedSeat = true;
 					}
 				}
 			}
